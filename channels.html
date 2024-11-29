@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <title>Yatch Channels</title>
+        <meta charset="utf-8"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"/>
+		<!-- <meta http-equiv="X-UA-Compatible" content="ie=edge"/> -->
+        <link href="dist/css/tabler.css" rel="stylesheet"/>
+		<link href="dist/css/tabler-vendors.min.css" rel="stylesheet"/>
+        <link href="dist/css/ahw.css" rel="stylesheet"/>
+    </head>
+    <body class="antialiased">
+        <script src="dist/libs/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="dist/js/tabler.js"></script>
+        <script src="dist/js/jquery-3.2.1.min.js"></script>
+        <script src="dist/js/ahw.js"></script>
+
+        <div class="page">
+
+            <div class="content mt-6">
+				<div class="container-xl">
+
+					<div class="page-header d-print-none mt-3">
+						<div class="row align-items-center mb-3">
+							<div class="col">
+								<div class="page-pretitle">Channels</div>
+								<h2 class="page-title">채널 선택</h2>
+							</div>
+						</div>
+
+                        <div class="row row-deck row-cards">
+                            <div class="col-sm-12 col-lg-12">
+                                <div class="card p-3">
+
+                                    <div id="table-default" class="table-responsive">
+                                        <table class="table">
+                                          <thead>
+                                                <tr>
+                                                    <th>방 제목</th>
+                                                    <th>생성 시간</th>
+                                                    <th>참여 인원</th>
+                                                    <th>기타</th>
+                                                    <!-- <th><input class="form-control" id="player_5" placeholder="이름 입력"/></th>
+                                                    <th><input class="form-control" id="player_6" placeholder="이름 입력"/></th> -->
+                                                </tr>
+                                            </thead>
+                                            <tbody class="table-tbody" id="channel_list">
+                                            </tbody>
+                                        </table>
+
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                            
+                        </div>
+                        <button class="btn btn-primary m-1" onclick="showCreate()">방 만들기</button>
+					</div>
+
+				</div>
+
+                <footer class="footer footer-transparent d-print-none">
+                    <div class="container-xl">
+                        <div class="row text-center align-items-center flex-row-reverse">
+                            <div class="col-12 col-lg-auto mt-3 mt-lg-0">
+                                <ul class="list-inline list-inline-dots mb-0">
+                                    <li class="list-inline-item">
+                                        Copyright © 2024
+                                        ahw.
+                                        All rights reserved.
+                                    </li>
+                                    <li id="footer_version" class="list-inline-item">
+                                        v1.0.0-beta20
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </footer>
+
+                <!-- Hidden Loading -->
+                <div id="loading" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(255,255,255,0.8); z-index:9999;">
+                    <div style="position:absolute; top:50%; left:50%; transform:translate(-50%, -50%);">
+                        <p>로딩 중...</p>
+                        <div class="progress progress-sm">
+                            <div class="progress-bar progress-bar-indeterminate"></div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- Hidden Create -->
+                <div id="create" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(255,255,255,0.8); z-index:9999;">
+                    <div style="position:absolute; top:50%; left:50%; transform:translate(-50%, -50%);">
+                 
+                        <div class="card card-md">
+                            <div class="card-body">
+                                <h2 class="card-title text-center mb-4"><b>방 만들기</b></h2>
+                                <div class="mb-2">
+                                    <label class="form-label">방 이름</label>
+                                    <input id="input_channel_name" type="text" class="form-control" placeholder="방 이름을 입력해주세요" autocomplete="off" autofocus>
+                                </div>
+                                <!-- <div class="mb-2">
+                                    <label class="form-label">비밀번호</label>
+                                    <input id="signin_pwd" type="password" class="form-control" placeholder="비밀번호를 입력해주세요" autocomplete="off" onkeypress="signinViaEnter(event)">
+                                </div> -->
+                                <div class="mb-4"></div>
+                                <div class="form-footer">
+                                    <button class="btn btn-primary w-100" onclick="createChannel()">생성</button>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+        </div>
+
+        <script>
+            getChannels();
+
+            function showCreate() {
+                $('#create').show();
+            }
+        </script>
+
+    </body>
+</html>

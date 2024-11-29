@@ -31,6 +31,48 @@ function Alert(title, message) {
     });
 }
 
+
+function getChannels() {
+    $(document).ready(function() {
+        $.ajax({
+            type: "get",
+            url: "http://192.168.1.8:9191/channels",
+            dataType: 'json',
+            processData: false,
+            contentType: false,
+            timeout: (1000 * 60 * 60),
+            beforeSend: function() {
+                $('#loading').show();
+                $('#channel_list').empty();
+            },
+            success: function(data) {
+                for (const [key, value] of Object.entries(data)) {
+                    const tr = `<tr>
+<td>${key}</td>
+<td>${value.create_date}</td>
+<td>${value.users.length}</td>
+<td><button class="btn btn-primary btn-sm" id="enter_${key}" onclick="window.location.href='./index.html?channel=${key}'">입장</button></td>
+</tr>`;
+                    $('#channel_list').append(tr);
+                }
+            },
+            error: function(err) {
+                console.log(err);
+            },
+            complete: function() {
+                $('#loading').hide();
+            }
+        });
+    });
+}
+
+function createChannel() {
+    const channel_name = $('#input_channel_name')[0].value;
+    $('#create').hide();
+    window.location.href = `./index.html?channel=${channel_name}`;
+}
+
+
 function calc_top(id) {
     let player_number;
     try {

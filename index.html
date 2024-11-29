@@ -16,10 +16,8 @@
         <script src="dist/js/ahw.js"></script>
 
         <div class="page">
-
             <div class="content mt-6">
 				<div class="container-xl">
-
 					<div class="page-header d-print-none mt-3">
 						<div class="row align-items-center mb-3">
 							<div class="col">
@@ -27,7 +25,6 @@
 								<h2 class="page-title"><a href="#" id="reload_tag">요트 다이스</a></h2>
 							</div>
 						</div>
-
                         <div class="row row-deck row-cards">
                             <div class="col-sm-12 col-lg-12">
                                 <div class="card p-3">
@@ -251,6 +248,38 @@
                 $('input[id^="hexa_"]').on('change', function() {
                     calc_top(this.id);
                 });
+
+
+                const url = window.location.href;
+                const channel_name = url.split('=').pop();
+                const uuid = crypto.randomUUID();
+
+                const socket = new WebSocket(`ws://192.168.1.8:9191/ws/${channel_name}`);
+                socket.onopen = function(event) {
+                    // 연결 열기 처리
+                    const message = {
+                        action: "join",
+                        payload: {
+                            username: uuid,
+                        },
+                    };
+
+                    socket.send(JSON.stringify(message));
+                };
+
+                socket.onmessage = function(event) {
+                    // 수신된 메시지 처리
+                    const data = JSON.parse(event.data);
+                    console.log(data);
+
+                    if (data.master === false || data.master === 'false') {
+                        document.querySelectorAll('input').forEach(input => input.disabled = true);
+                    }
+                };
+
+                socket.onclose = function(event) {
+                    // 연결 닫기 처리
+                };
             });
         </script>
 
