@@ -51,7 +51,7 @@ function getChannels() {
 <td>${key}</td>
 <td>${value.create_date}</td>
 <td>${value.users.length}</td>
-<td><button class="btn btn-primary btn-sm" id="enter_${key}" onclick="window.location.href='./index.html?channel=${key}'">입장</button></td>
+<td><button class="btn btn-primary btn-sm" id="enter_${key}" onclick="window.location.href='./main.html?channel=${key}'">입장</button></td>
 </tr>`;
                     $('#channel_list').append(tr);
                 }
@@ -69,7 +69,7 @@ function getChannels() {
 function createChannel() {
     const channel_name = $('#input_channel_name')[0].value;
     $('#create').hide();
-    window.location.href = `./index.html?channel=${channel_name}`;
+    window.location.href = `./main.html?channel=${channel_name}`;
 }
 
 

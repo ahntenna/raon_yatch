@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <title>Yatch</title>
+        <meta charset="utf-8"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"/>
+		<!-- <meta http-equiv="X-UA-Compatible" content="ie=edge"/> -->
+        <link href="dist/css/tabler.css" rel="stylesheet"/>
+		<link href="dist/css/tabler-vendors.min.css" rel="stylesheet"/>
+        <link href="dist/css/ahw.css" rel="stylesheet"/>
+    </head>
+    <body class="antialiased">
+        <script src="dist/libs/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="dist/js/tabler.js"></script>
+        <script src="dist/js/jquery-3.2.1.min.js"></script>
+        <script src="dist/js/ahw.js"></script>
+
+        <div class="page">
+            <div class="content mt-6">
+				<div class="container-xl">
+					<div class="page-header d-print-none mt-3">
+						<div class="row align-items-center mb-3">
+							<div class="col">
+								<div class="page-pretitle">Yatch</div>
+								<h2 class="page-title"><a href="#" id="reload_tag">요트 다이스</a></h2>
+							</div>
+						</div>
+                        <div class="row row-deck row-cards">
+                            <div class="col-sm-12 col-lg-12">
+                                <div class="card p-3">
+
+                                    <div id="table-default" class="table-responsive">
+                                        <table class="table">
+                                          <thead>
+                                                <tr>
+                                                    <th>플레이어</th>
+                                                    <th><input class="form-control" id="player_1" placeholder="이름 입력"/></th>
+                                                    <th><input class="form-control" id="player_2" placeholder="이름 입력"/></th>
+                                                    <th><input class="form-control" id="player_3" placeholder="이름 입력"/></th>
+                                                    <th><input class="form-control" id="player_4" placeholder="이름 입력"/></th>
+                                                    <!-- <th><input class="form-control" id="player_5" placeholder="이름 입력"/></th>
+                                                    <th><input class="form-control" id="player_6" placeholder="이름 입력"/></th> -->
+                                                </tr>
+                                            </thead>
+                                            <tbody class="table-tbody">
+                                                <tr>
+                                                    <td>에이스</td>
+                                                    <td><input class="form-control" id="ace_1" type="number"/></td>
+                                                    <td><input class="form-control" id="ace_2" type="number"/></td>
+                                                    <td><input class="form-control" id="ace_3" type="number"/></td>
+                                                    <td><input class="form-control" id="ace_4" type="number"/></td>
+                                                    <!-- <td><input class="form-control" id="ace_5" type="number"/></td>
+                                                    <td><input class="form-control" id="ace_6" type="number"/></td> -->
+                                                </tr>
+                                                <tr>
+                                                    <td>듀얼</td>
+                                                    <td><input class="form-control" id="dual_1" type="number"/></td>
+                                                    <td><input class="form-control" id="dual_2" type="number"/></td>
+                                                    <td><input class="form-control" id="dual_3" type="number"/></td>
+                                                    <td><input class="form-control" id="dual_4" type="number"/></td>
+                                                    <!-- <td><input class="form-control" id="dual_5" type="number"/></td>
+                                                    <td><input class="form-control" id="dual_6" type="number"/></td> -->
+                                                </tr>
+                                                <tr>
+                                                    <td>트리플</td>
+                                                    <td><input class="form-control" id="tripple_1" type="number"/></td>
+                                                    <td><input class="form-control" id="tripple_2" type="number"/></td>
+                                                    <td><input class="form-control" id="tripple_3" type="number"/></td>
+                                                    <td><input class="form-control" id="tripple_4" type="number"/></td>
+                                                    <!-- <td><input class="form-control" id="tripple_5" type="number"/></td>
+                                                    <td><input class="form-control" id="tripple_6" type="number"/></td> -->
+                                                </tr>
+                                                <tr>
+                                                    <td>쿼드</td>
+                                                    <td><input class="form-control" id="quad_1" type="number"/></td>
+                                                    <td><input class="form-control" id="quad_2" type="number"/></td>
+                                                    <td><input class="form-control" id="quad_3" type="number"/></td>
+                                                    <td><input class="form-control" id="quad_4" type="number"/></td>
+                                                    <!-- <td><input class="form-control" id="quad_5" type="number"/></td>
+                                                    <td><input class="form-control" id="quad_6" type="number"/></td> -->
+                                                </tr>
+                                                <tr>
+                                                    <td>펜타</td>
+                                                    <td><input class="form-control" id="penta_1" type="number"/></td>
+                                                    <td><input class="form-control" id="penta_2" type="number"/></td>
+                                                    <td><input class="form-control" id="penta_3" type="number"/></td>
+                                                    <td><input class="form-control" id="penta_4" type="number"/></td>
+                                                    <!-- <td><input class="form-control" id="penta_5" type="number"/></td>
+                                                    <td><input class="form-control" id="penta_6" type="number"/></td> -->
+                                                </tr>
+                                                <tr>
+                                                    <td>헥사</td>
+                                                    <td><input class="form-control" id="hexa_1" type="number"/></td>
+                                                    <td><input class="form-control" id="hexa_2" type="number"/></td>
+                                                    <td><input class="form-control" id="hexa_3" type="number"/></td>
+                                                    <td><input class="form-control" id="hexa_4" type="number"/></td>
+                                                    <!-- <td><input class="form-control" id="hexa_5" type="number"/></td>
+                                                    <td><input class="form-control" id="hexa_6" type="number"/></td> -->
+                                                </tr>
+                                                <tr>
+                                                    <td>상단</td>
+                                                    <td><input class="form-control" id="top_1" disabled/></td>
+                                                    <td><input class="form-control" id="top_2" disabled/></td>
+                                                    <td><input class="form-control" id="top_3" disabled/></td>
+                                                    <td><input class="form-control" id="top_4" disabled/></td>
+                                                    <!-- <td><input class="form-control" id="top_5" disabled/></td>
+                                                    <td><input class="form-control" id="top_6" disabled/></td> -->
+                                                </tr>
+                                                <tr>
+                                                    <td>초이스</td>
+                                                    <td><input class="form-control" id="choice_1" type="number"/></td>
+                                                    <td><input class="form-control" id="choice_2" type="number"/></td>
+                                                    <td><input class="form-control" id="choice_3" type="number"/></td>
+                                                    <td><input class="form-control" id="choice_4" type="number"/></td>
+                                                    <!-- <td><input class="form-control" id="choice_5" type="number"/></td>
+                                                    <td><input class="form-control" id="choice_6" type="number"/></td> -->
+                                                </tr>
+                                                <tr>
+                                                    <td>포커</td>
+                                                    <td><input class="form-control" id="fourcard_1" type="number"/></td>
+                                                    <td><input class="form-control" id="fourcard_2" type="number"/></td>
+                                                    <td><input class="form-control" id="fourcard_3" type="number"/></td>
+                                                    <td><input class="form-control" id="fourcard_4" type="number"/></td>
+                                                    <!-- <td><input class="form-control" id="fourcard_5" type="number"/></td>
+                                                    <td><input class="form-control" id="fourcard_6" type="number"/></td> -->
+                                                </tr>
+                                                <tr>
+                                                    <td>풀 하우스</td>
+                                                    <td><input class="form-control" id="fullhouse_1" type="number"/></td>
+                                                    <td><input class="form-control" id="fullhouse_2" type="number"/></td>
+                                                    <td><input class="form-control" id="fullhouse_3" type="number"/></td>
+                                                    <td><input class="form-control" id="fullhouse_4" type="number"/></td>
+                                                    <!-- <td><input class="form-control" id="fullhouse_5" type="number"/></td>
+                                                    <td><input class="form-control" id="fullhouse_6" type="number"/></td> -->
+                                                </tr>
+                                                <tr>
+                                                    <td>스몰 스트레이트</td>
+                                                    <td><input class="form-control" id="small_1" type="number"/></td>
+                                                    <td><input class="form-control" id="small_2" type="number"/></td>
+                                                    <td><input class="form-control" id="small_3" type="number"/></td>
+                                                    <td><input class="form-control" id="small_4" type="number"/></td>
+                                                    <!-- <td><input class="form-control" id="small_5" type="number"/></td>
+                                                    <td><input class="form-control" id="small_6" type="number"/></td> -->
+                                                </tr>
+                                                <tr>
+                                                    <td>라지 스트레이트</td>
+                                                    <td><input class="form-control" id="large_1" type="number"/></td>
+                                                    <td><input class="form-control" id="large_2" type="number"/></td>
+                                                    <td><input class="form-control" id="large_3" type="number"/></td>
+                                                    <td><input class="form-control" id="large_4" type="number"/></td>
+                                                    <!-- <td><input class="form-control" id="large_5" type="number"/></td>
+                                                    <td><input class="form-control" id="large_6" type="number"/></td> -->
+                                                </tr>
+                                                <tr>
+                                                    <td>야추</td>
+                                                    <td><input class="form-control" id="yatch_1" type="number"/></td>
+                                                    <td><input class="form-control" id="yatch_2" type="number"/></td>
+                                                    <td><input class="form-control" id="yatch_3" type="number"/></td>
+                                                    <td><input class="form-control" id="yatch_4" type="number"/></td>
+                                                    <!-- <td><input class="form-control" id="yatch_5" type="number"/></td>
+                                                    <td><input class="form-control" id="yatch_6" type="number"/></td> -->
+                                                </tr>
+                                                <tr>
+                                                    <td>합계</td>
+                                                    <td><input class="form-control" id="total_1" disabled/></td>
+                                                    <td><input class="form-control" id="total_2" disabled/></td>
+                                                    <td><input class="form-control" id="total_3" disabled/></td>
+                                                    <td><input class="form-control" id="total_4" disabled/></td>
+                                                    <!-- <td><input class="form-control" id="total_5" disabled/></td>
+                                                    <td><input class="form-control" id="total_6" disabled/></td> -->
+                                                </tr>
+                                                <tr>
+                                                    <td>계산하기</td>
+                                                    <td><button class="btn btn-primary btn-sm" id="calc_1" onclick="calc(event)">click</button></td>
+                                                    <td><button class="btn btn-primary btn-sm" id="calc_2" onclick="calc(event)">click</button></td>
+                                                    <td><button class="btn btn-primary btn-sm" id="calc_3" onclick="calc(event)">click</button></td>
+                                                    <td><button class="btn btn-primary btn-sm" id="calc_4" onclick="calc(event)">click</button></td>
+                                                    <!-- <td><button class="btn btn-primary btn-sm" id="calc_5" onclick="calc(event)">click</button></td>
+                                                    <td><button class="btn btn-primary btn-sm" id="calc_6" onclick="calc(event)">click</button></td> -->
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                    
+                                </div>
+                            </div>
+    
+                        </div>
+					</div>
+
+				</div>
+
+                <footer class="footer footer-transparent d-print-none">
+                    <div class="container-xl">
+                        <div class="row text-center align-items-center flex-row-reverse">
+                            <div class="col-12 col-lg-auto mt-3 mt-lg-0">
+                                <ul class="list-inline list-inline-dots mb-0">
+                                    <li class="list-inline-item">
+                                        Copyright © 2024
+                                        ahw.
+                                        All rights reserved.
+                                    </li>
+                                    <li id="footer_version" class="list-inline-item">
+                                        v1.0.0-beta20
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </footer>
+
+                <!-- Hidden Loading -->
+                <div id="loading" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(255,255,255,0.8); z-index:9999;">
+                    <div style="position:absolute; top:50%; left:50%; transform:translate(-50%, -50%);">
+                        <p>로딩 중...</p>
+                        <div class="progress progress-sm">
+                            <div class="progress-bar progress-bar-indeterminate"></div>
+                        </div>
+                    </div>
+                </div>
+
+        </div>
+
+        <script>
+            $(document).ready(function() {
+                // 특정 <a> 태그를 선택하여 클릭 이벤트를 추가
+                $('#reload_tag').on('click', function(event) {
+                    event.preventDefault(); // 기본 동작(링크 이동)을 막음
+                    location.reload(); // 페이지 새로고침
+                });
+
+
+                $('input[id^="ace_"]').on('change', function() {
+                    calc_top(this.id);
+                });
+                $('input[id^="dual_"]').on('change', function() {
+                    calc_top(this.id);
+                });
+                $('input[id^="tripple_"]').on('change', function() {
+                    calc_top(this.id);
+                });
+                $('input[id^="quad_"]').on('change', function() {
+                    calc_top(this.id);
+                });
+                $('input[id^="penta_"]').on('change', function() {
+                    calc_top(this.id);
+                });
+                $('input[id^="hexa_"]').on('change', function() {
+                    calc_top(this.id);
+                });
+
+
+                const url = window.location.href;
+                const channel_name = url.split('=').pop();
+                const uuid = crypto.randomUUID();
+
+                const socket = new WebSocket(`ws://192.168.1.8:9191/ws/${channel_name}`);
+                socket.onopen = function(event) {
+                    // 연결 열기 처리
+                    const message = {
+                        action: "join",
+                        payload: {
+                            username: uuid,
+                        },
+                    };
+
+                    socket.send(JSON.stringify(message));
+                };
+
+                socket.onmessage = function(event) {
+                    // 수신된 메시지 처리
+                    const data = JSON.parse(event.data);
+                    console.log(data);
+
+                    if (data.master === false || data.master === 'false') {
+                        document.querySelectorAll('input').forEach(input => input.disabled = true);
+                    }
+                };
+
+                socket.onclose = function(event) {
+                    // 연결 닫기 처리
+                };
+            });
+        </script>
+
+    </body>
+</html>
